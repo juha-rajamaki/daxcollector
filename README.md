@@ -9,12 +9,6 @@ php daxcollector
 
 
 
-### Example of usage of Legend (show dax price history)
-
-php legend
-
-
-
 ### Example of usage of Daxduck (track DAX-index points)
 
 1. Run the daxduck in konsole to collect data
