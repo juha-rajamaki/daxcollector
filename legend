@@ -14,11 +14,7 @@
 	$today = date('Y-m-d');
 
 	$limiter = 20;
-/*
-	// limit results
-	if(int ($argv[1]) != '0') { $limiter 	= $argv[1]; } else { $limiter = 10; }
-	echo "xxx".$limiter."yyy";
-*/
+
 	$url = "https://www.google.com/finance/historical?q=INDEXDB%3ADAX&start=0&num=200&ei=6zyiVcCOEIHisgGc_axg";
         $curl = curl_init();
 
@@ -69,7 +65,9 @@
         foreach ($dax as $key => $value) {
 
                 $price_avg_compare = round($value[0][0] / $price_close * 100 - 100, 2);
-		
+### TODO
+		$price_avg_compare = "-----";		
+
 		if($price_avg_compare == "-100") { $price_avg_compare = "------"; } else { 
                 	if($price_avg_compare > 0) {     $price_avg_compare = "".chr(27)."[1;32m+$price_avg_compare%". chr(27)."[0m".""; }
                 	if($price_avg_compare < 0) {     $price_avg_compare = "".chr(27)."[1;35m$price_avg_compare%". chr(27)."[0m".""; }
